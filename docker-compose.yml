@@ -14,8 +14,6 @@ services:
       # Монтирую папку с HTML файлами в стандартную папку Nginx
       - ./html:/usr/share/nginx/html
 
-      # Монтирую кастомную конфигурацию Nginx
-      # :ro = read only (только для чтения)
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
     
     networks:
@@ -61,7 +59,6 @@ services:
 
 networks:
   app-network:
-    # Тип драйвера сети - bridge (по умолчанию)
     driver: bridge
     
     ipam:
